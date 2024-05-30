@@ -10,6 +10,7 @@ module.exports = {
         'secondary': "#00672E",
         'primary': "#EFECEA",
         'black': "#000",
+        'white': "#FFFFFF",
       }
     },
   },
