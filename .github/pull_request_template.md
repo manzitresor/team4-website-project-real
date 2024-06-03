@@ -14,6 +14,9 @@ List all the tasks and sub-tasks that were assigned to you Make sure you check e
 
 Provide github board link related to your PR in case it's appropriate and applicable
 
+## Screenshots (If appropriate/applicable)
+Provide screenshots related to your PR in case it's appropriate and applicable
+
 ## Please check this Checklist before you submit your PR:
 
 - [ ] My code follows the style guidelines of this project
