@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baumeister - Contact Page</title>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <script>
+    const loadComponents = (id, url) => {
+      fetch(url)
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById(id).innerHTML = html;
+        });
+    };
+
+    window.onload = () => {
+      loadComponents("header", "sections/header.html");
+      loadComponents("contact", "sections/contact.html");
+      loadComponents("footer", "sections/footer.html");
+    };
+  </script>
+  <body>
+    <div id="header"></div>
+    <div id="contact"></div>
+    <div id="footer"></div>
+  </body>
+</html>
