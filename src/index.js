@@ -92,5 +92,3 @@ function contactRender() {
                 container.append(sectionDiv);
         });
 }
-
-
