@@ -21,9 +21,9 @@ const contactInfo = [
                         },
                         {
                                 type: "a",
-                                content: "hallo@agentur-baumeister.com",
+                                content: `hallo@agentur-<br class="hidden md:block lg:hidden" />baumeister.com`,
                                 href: "mailto:hallo@agentur-baumeister.com",
-                                class: "text-wrap  py-1",
+                                class: "text-wrap py-1",
                         },
                 ],
         },
@@ -88,11 +88,7 @@ function contactRender() {
 
                         if (detail.type === "a") {
                                 element.href = detail.href;
-                                element.innerHTML = detail.content.includes("@")
-                                        ? detail.content
-                                                .split("@")
-                                                .join('<br class="hidden md:block lg:hidden" />@')
-                                        : detail.content;
+                                element.innerHTML = detail.content;
                         } else {
                                 element.innerHTML = detail.content;
                         }
