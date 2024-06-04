@@ -11,7 +11,7 @@ function service() {
   const fragment = new DocumentFragment();
   for (const x of data) {
     const li = document.createElement("li");
-    li.classList.add("font-semibold","w-[80%]","md:w-[50%]","lg:w-full");
+    li.classList.add("font-semibold");
     li.innerText = x;
     fragment.append(li);
   }
