@@ -1,6 +1,4 @@
 function navBar() {
-        // let service =  document.querySelector("#service>ul");
-        // console.log(service);   
         let languages = ["About", "Services", "References", "Contacts"];
         let listElement = document.getElementById("myList");
         console.log(listElement);
@@ -10,24 +8,21 @@ function navBar() {
         listElement.appendChild(listItem);
         });
         const sidebar = document.getElementById('sidebar');
-
         document.querySelectorAll(".togglBtn").forEach(el =>{
                 el.addEventListener('click',function() {
                 let isHidden = sidebar.classList.contains('hidden');
-
                         if (isHidden) {
                             sidebar.classList.remove('hidden');
+                            el.firstElementChild.style.display='block'
+                            el.lastElementChild.style.display='none'
                         } else {
-
+                          el.firstElementChild.style.display='none'
+                          el.lastElementChild.style.display='block'
                             sidebar.classList.add('hidden');
                         }
                     } )
         })
 
-
-
-
- 
 }
 
 
