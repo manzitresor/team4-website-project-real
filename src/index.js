@@ -55,9 +55,6 @@ function service() {
         }
         service.append(fragment);
 }
-function checkme() {
-        let service = document.querySelector("#service>ul");
-}
 
 function contactRender() {
         const container = document.querySelector(".contacts");
