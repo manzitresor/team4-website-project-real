@@ -1,4 +1,4 @@
-function checkme() {
+function navBar() {
         // let service =  document.querySelector("#service>ul");
         // console.log(service);   
         let languages = ["About", "Services", "References", "Contacts"];
