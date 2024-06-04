@@ -5,30 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./output.css">
     <title>Website project</title>
-</head>
-<script>
-    const loadComponents = (id, url) =>  {
-        fetch(url)
-        .then((response) => response.text())
-        .then((html) => {
-            document.getElementById(id).innerHTML = html;
-        });
-    }
+    <script defer>
+        const loadComponents = (id, url, callback) => {
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(id).innerHTML = html;
+                    if (callback) callback();
+                });
+        }
 
-    window.onload = () => {
-        loadComponents('header', 'sections/header.html');
-        loadComponents('hero', 'sections/hero.html');
-        loadComponents('about', 'sections/about.html');
-        loadComponents('services', 'sections/services.html');
-        loadComponents('references', 'sections/references.html');
-        loadComponents('contact', 'sections/contact.html');
-        loadComponents('footer', 'sections/footer.html');
-    }
-</script>
+        window.onload = () => {
+            let loadedComponents = 0;
+            const totalComponents = 8;
+            
+            const componentLoaded = () => {
+                loadedComponents++;
+                if (loadedComponents === totalComponents) {
+                    checkme();       
+                }
+            };
+
+            loadComponents('header', 'sections/header.html', componentLoaded);
+            loadComponents('hero', 'sections/hero.html', componentLoaded);
+            loadComponents('about', 'sections/about.html', componentLoaded);
+            loadComponents('sticky', 'sections/sticky-yellow.html', componentLoaded);
+            loadComponents('services', 'sections/services.html', componentLoaded);
+            loadComponents('references', 'sections/references.html', componentLoaded);
+            loadComponents('contact', 'sections/contact.html', componentLoaded);
+            loadComponents('footer', 'sections/footer.html', componentLoaded);
+        }
+    </script>
+    <script src="./index.js"></script>
+
+
+</head>
+
 <body>
     <div id="header"></div>
     <div id="hero"></div>
     <div id="about"></div>
+    <div id="sticky"></div>
     <div id="services"></div>
     <div id="references"></div>
     <div id="contact"></div>
