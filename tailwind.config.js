@@ -11,6 +11,9 @@ module.exports = {
         'primary': "#EFECEA",
         'black': "#000",
         'white': "#FFFFFF",
+      },
+      backgroundImage: {
+        'yellowCard': "url('./img/yellowSect.svg')",
       }
     },
   },

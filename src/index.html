@@ -22,8 +22,10 @@
             const componentLoaded = () => {
                 loadedComponents++;
                 if (loadedComponents === totalComponents) {
-                    service();       
+                    service();  
+                    referencesRendering();     
                 }
+                
             };
 
             loadComponents('header', 'sections/header.html', componentLoaded);
