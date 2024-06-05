@@ -1,12 +1,28 @@
-<nav class="flex justify-between items-center px-10 py-3">
-    <p class="font-semibold">DE<br>EN</p>
-    <img src="/src/img/Baumeister.png" alt="">
-    <img src="/src/img/Group 5.png" alt="" class="cursor-pointer block  lg:hidden ">
-    <img src="/src/img/crosssection.png" alt="" class="hidden">
-    <ul class="hidden lg:block  md:text-right text-base">
-        <li class="font-semibold">About</li>
-        <li class="font-semibold">Services</li>
-        <li class="font-semibold">References</li>
-        <li class="font-semibold">Contact</li>
-    </ul>
+<nav class="p-4">
+    <div class="container flex justify-between items-center">
+        <p class="font-semibold"><a href="google.com">DE</a><br><a href="instagram.com">EN</a></p>
+        <img src="img/Baumeister.png" alt="">
+        <div class="lg:hidden">
+            <button class="togglBtn" >
+                <img src="img/Group 5.png" alt="Menu" class="h-6">
+            </button>
+        </div>
+        <ul id="menu" class="hidden lg:block text-right">
+            <li class="font-semibold"><a href="#">About</a></li>
+            <li class="font-semibold"><a href="#">Services</a></li>
+            <li class="font-semibold"><a href="#">References</a></li>
+            <li class="font-semibold"><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <div id="sidebar" class=" fixed -top-1 w-full h-full z-[100]  hidden lg:hidden space-y-8 p-4">
+        <div class="container flex justify-between items-center">
+            <p class="font-bold"></p>
+            <button class="togglBtn" class="pt-6" >
+                <img src="img/crosssection.png" alt="Close" class="h-18 w-14 ">
+            </button>
+        </div>
+        <ul class="text-center py-8 font-bold text-2xl space-y-9 text-green-700 " id="myList" >
+        </ul>
+    </div>
 </nav>
+<script src="/src/index.js"></script>
