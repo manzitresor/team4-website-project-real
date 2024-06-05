@@ -1,6 +1,4 @@
 function navBar() {
-        // let service =  document.querySelector("#service>ul");
-        // console.log(service);   
         let languages = ["About", "Services", "References", "Contacts"];
         let listElement = document.getElementById("myList");
         console.log(listElement);
