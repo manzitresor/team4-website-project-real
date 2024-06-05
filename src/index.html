@@ -17,13 +17,14 @@
 
       window.onload = () => {
         let loadedComponents = 0;
-        const totalComponents = 7;
+        const totalComponents = 8;
 
         const componentLoaded = () => {
           loadedComponents++;
           if (loadedComponents === totalComponents) {
             service();
-            referencesRendering();    
+            referencesRendering();
+            footerRender();
           }
         };
 
@@ -41,19 +42,25 @@
           "sections/references.html",
           componentLoaded
         );
+        loadComponents(
+          "red-sticky",
+          "sections/sticky-red.html",
+          componentLoaded
+        );
         loadComponents("footer", "sections/footer.html", componentLoaded);
       };
     </script>
     <script src="./index.js"></script>
   </head>
 
-  <body>
+  <body class="bg-primary">
     <div id="header"></div>
     <div id="hero"></div>
     <div id="about"></div>
     <div id="sticky"></div>
     <div id="services"></div>
     <div id="references"></div>
+    <div id="red-sticky"></div>
     <div id="footer"></div>
   </body>
 </html>
