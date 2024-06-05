@@ -25,17 +25,6 @@
             service();
           }
         };
-        window.onload = () => {
-            let loadedComponents = 0;
-            const totalComponents = 8;
-            
-            const componentLoaded = () => {
-                loadedComponents++;
-                if (loadedComponents === totalComponents) {
-                    service(); 
-                    navBar();      
-                }
-            };
 
         loadComponents("header", "sections/header.html", componentLoaded);
         loadComponents("hero", "sections/hero.html", componentLoaded);
