@@ -36,6 +36,7 @@ const contactInfo = [
                 details: [{ type: "p", content: "Berlin, Germany", class: "py-1" }],
         },
 ];
+
 function navBar() {
         let languages = ["About", "Services", "References", "Contacts"];
         let listElement = document.getElementById("myList");
@@ -72,6 +73,7 @@ function navBar() {
 
 
 
+
 function service() {
   const data = [
     "Brand strategy",
@@ -90,8 +92,6 @@ function service() {
     fragment.append(li);
   }
   service.append(fragment);
-
-  
 }
 
 
@@ -138,5 +138,42 @@ const fragmentRef = new DocumentFragment();
       fragmentRef.appendChild(liEl);
     });
     refs.appendChild(fragmentRef);
-
 }
+
+function contactRender() {
+        const container = document.querySelector(".contacts");
+
+        if (!container) {
+                console.error("Container element not found");
+                return;
+        }
+
+        contactInfo.forEach((section) => {
+                const sectionDiv = document.createElement("div");
+                sectionDiv.className = "pb-8 lg:pb-8";
+
+                if (section.sectionTitle) {
+                        const sectionTitle = document.createElement("h2");
+                        sectionTitle.className = "py-1 font-bold";
+                        sectionTitle.textContent = section.sectionTitle;
+                        sectionDiv.appendChild(sectionTitle);
+                }
+
+                section.details.forEach((detail) => {
+                        const element = document.createElement(detail.type);
+                        element.className = detail.class || "";
+
+                        if (detail.type === "a") {
+                                element.href = detail.href;
+                                element.innerHTML = detail.content;
+                        } else {
+                                element.innerHTML = detail.content;
+                        }
+
+                        sectionDiv.appendChild(element);
+                });
+
+                container.append(sectionDiv);
+        });
+}
+
