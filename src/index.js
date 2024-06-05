@@ -42,29 +42,29 @@ function navBar() {
         let listElement = document.getElementById("myList");
         console.log(listElement);
         languages.forEach(function (language) {
-        let listItem = document.createElement("li");
-        listItem.textContent = language;
-        listElement.appendChild(listItem);
+                let listItem = document.createElement("li");
+                listItem.textContent = language;
+                listElement.appendChild(listItem);
         });
         const sidebar = document.getElementById('sidebar');
 
-        document.querySelectorAll(".togglBtn").forEach(el =>{
-                el.addEventListener('click',function() {
-                let isHidden = sidebar.classList.contains('hidden');
+        document.querySelectorAll(".togglBtn").forEach(el => {
+                el.addEventListener('click', function () {
+                        let isHidden = sidebar.classList.contains('hidden');
 
                         if (isHidden) {
-                            sidebar.classList.remove('hidden');
+                                sidebar.classList.remove('hidden');
                         } else {
 
-                            sidebar.classList.add('hidden');
+                                sidebar.classList.add('hidden');
                         }
-                    } )
+                })
         })
 
 
 
 
- 
+
 }
 
 
@@ -75,69 +75,69 @@ function navBar() {
 
 
 function service() {
-  const data = [
-    "Brand strategy",
-    "Corporate Identity & Website development",
-    "SEO & copywriting",
-    "Media Relations",
-    "Digital marketing & content production",
-    "Influencer relations",
-  ];
-  let service = document.querySelector("#service>ul");
-  const fragment = new DocumentFragment();
-  for (const x of data) {
-    const li = document.createElement("li");
-    li.classList.add("font-semibold");
-    li.innerText = x;
-    fragment.append(li);
-  }
-  service.append(fragment);
+        const data = [
+                "Brand strategy",
+                "Corporate Identity & Website development",
+                "SEO & copywriting",
+                "Media Relations",
+                "Digital marketing & content production",
+                "Influencer relations",
+        ];
+        let service = document.querySelector("#service>ul");
+        const fragment = new DocumentFragment();
+        for (const x of data) {
+                const li = document.createElement("li");
+                li.classList.add("font-semibold");
+                li.innerText = x;
+                fragment.append(li);
+        }
+        service.append(fragment);
 }
 
 
 const referencesData = [
-  " Ace Hotel",
-  "ARMEDANGELS",
-  "BERLIN DESIGN WEEK",
-  "Berliner Berg",
-  "BITE CLUB",
-  "Budweiser Budvar",
-  "ChungKing Noodles",
-  "Designpreis Brandenburg",
-  "Die Techniker",
-  "European Street Food Awards",
-  "Grundmann Dentistry",
-  "HORNBACH Werkstück",
-  "HORNBACH macht Schule",
-  "iF Design",
-  "Kopka",
-  "KLH Maßschuhe",
-  "Lode & Stijn",
-  "Luya",
-  "MEISSEN",
-  "MEISSEN IKONEN",
-  "Motel Beer & Coffee",
-  "PAPER & TEA",
-  "rocket & basil",
-  "Seeberger Gruppe",
-  "Shiori",
-  "SPOC Magazin",
-  "stocubo",
-  "STUR",
-  "World of Coffee",
-  "yamo"
-  ]
-  
-function referencesRendering(){
-let refs = document.querySelector('#reference');
-console.log(refs)
-const fragmentRef = new DocumentFragment();
- referencesData.forEach(text => {
-      let liEl = document.createElement('li');
-      liEl.innerText = text;
-      fragmentRef.appendChild(liEl);
-    });
-    refs.appendChild(fragmentRef);
+        " Ace Hotel",
+        "ARMEDANGELS",
+        "BERLIN DESIGN WEEK",
+        "Berliner Berg",
+        "BITE CLUB",
+        "Budweiser Budvar",
+        "ChungKing Noodles",
+        "Designpreis Brandenburg",
+        "Die Techniker",
+        "European Street Food Awards",
+        "Grundmann Dentistry",
+        "HORNBACH Werkstück",
+        "HORNBACH macht Schule",
+        "iF Design",
+        "Kopka",
+        "KLH Maßschuhe",
+        "Lode & Stijn",
+        "Luya",
+        "MEISSEN",
+        "MEISSEN IKONEN",
+        "Motel Beer & Coffee",
+        "PAPER & TEA",
+        "rocket & basil",
+        "Seeberger Gruppe",
+        "Shiori",
+        "SPOC Magazin",
+        "stocubo",
+        "STUR",
+        "World of Coffee",
+        "yamo"
+]
+
+function referencesRendering() {
+        let refs = document.querySelector('#reference');
+        console.log(refs)
+        const fragmentRef = new DocumentFragment();
+        referencesData.forEach(text => {
+                let liEl = document.createElement('li');
+                liEl.innerText = text;
+                fragmentRef.appendChild(liEl);
+        });
+        refs.appendChild(fragmentRef);
 }
 
 function contactRender() {
@@ -177,3 +177,25 @@ function contactRender() {
         });
 }
 
+function footerRender() {
+        const links = ['Impressum', 'Datenschutz', 'LinkedIn', 'Instagram'];
+        const links_list = document.querySelector('#footer nav ul');
+        const br = document.createElement('br');
+        const fragment = new DocumentFragment();
+        links.forEach((link) => {
+                const lnk = document.createElement('li');
+                const a = document.createElement('a');
+                a.innerText = link;
+                lnk.append(a);
+                lnk.className = "lg:w-[27%]";
+                if (link === 'Datenschutz') {
+                        lnk.className = "md:order-3 lg:w-[27%]";
+                        
+                }
+                if (link === 'Impressum') {
+                        lnk.className = "md:order-2 lg:w-[27%]";
+                }
+                fragment.append(lnk);
+        })
+        links_list.append(fragment);
+}
