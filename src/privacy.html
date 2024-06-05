@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./output.css">
+    <title>Website project</title>
+    <script defer>
+        const loadComponents = (id, url, callback) => {
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(id).innerHTML = html;
+                    if (callback) callback();
+                });
+        }
+
+        window.onload = () => {
+            let loadedComponents = 0;
+            const totalComponents = 3;
+            
+            const componentLoaded = () => {
+                loadedComponents++;
+                if (loadedComponents === totalComponents) {      
+                }
+            };
+
+            loadComponents('header', 'sections/header.html', componentLoaded);
+            loadComponents('privacy', 'sections/privacy.html', componentLoaded);
+            loadComponents('footer', 'sections/footer.html', componentLoaded);
+        }
+    </script>
+    <script src="./index.js"></script>
+
+
+</head>
+
+<body class="bg-primary text-secondary">
+    <div id="header"></div>
+   <div id="privacy"></div>
+    <div id="footer"></div>
+</body>
+
+</html>
