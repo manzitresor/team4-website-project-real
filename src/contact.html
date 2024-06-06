@@ -18,24 +18,27 @@
 
     window.onload = () => {
       let loadedComponents = 0;
-      const totalComponents = 3;
+      const totalComponents = 4;
 
       const componentLoaded = () => {
         loadedComponents++;
         if (loadedComponents === totalComponents) {
           contactRender();
+          footerRender();
         }
       };
 
       loadComponents("header", "sections/header.html", componentLoaded);
       loadComponents("contact", "sections/contact.html", componentLoaded);
+      loadComponents("red-sticky", "sections/sticky-red.html", componentLoaded);
       loadComponents("footer", "sections/footer.html", componentLoaded);
     };
   </script>
   <script src="./index.js"></script>
-  <body>
+  <body class="text-secondary">
     <div id="header"></div>
     <div id="contact"></div>
+    <div id="red-sticky" class="hidden md:block"></div>
     <div id="footer"></div>
   </body>
 </html>
