@@ -43,12 +43,13 @@ function navBar() {
         pages.forEach(page => {
                 let listItem = document.createElement("li");
                 let anchor = document.createElement('a')
-                anchor.href = `#${page[0].toLowerCase()}${page.slice(1, page.length)}`
+                anchor.href = `/src/index.html#${page[0].toLowerCase()}${page.slice(1, page.length)}`
                 anchor.textContent = page
                 listItem.appendChild(anchor);
                 listContainer.style.zIndex = 9
                 listContainer.appendChild(listItem);
         });
+        listContainer.lastElementChild.firstElementChild.href= `/src/contact.html`
         listContainer.innerHTML += `<svg
         width="1512"
         height="1028"
