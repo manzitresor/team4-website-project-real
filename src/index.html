@@ -24,22 +24,23 @@
           if (loadedComponents === totalComponents) {
             service();
             navBar()
-            referencesRendering();    
+            referencesRendering();
+            footerRender();
           }
         };
 
         loadComponents("header", "sections/header.html", componentLoaded);
         loadComponents("hero", "sections/hero.html", componentLoaded);
         loadComponents("about", "sections/about.html", componentLoaded);
-        loadComponents(
-          "sticky",
-          "sections/sticky-yellow.html",
-          componentLoaded
-        );
         loadComponents("services", "sections/services.html", componentLoaded);
         loadComponents(
           "references",
           "sections/references.html",
+          componentLoaded
+        );
+        loadComponents(
+          "red-sticky",
+          "sections/sticky-red.html",
           componentLoaded
         );
         loadComponents("footer", "sections/footer.html", componentLoaded);
@@ -48,13 +49,13 @@
     <script src="./index.js"></script>
   </head>
 
-  <body>
+  <body class="bg-primary">
     <div id="header"></div>
     <div id="hero"></div>
     <div id="about"></div>
-    <div id="sticky"></div>
     <div id="services"></div>
     <div id="references"></div>
+    <div id="red-sticky"></div>
     <div id="footer"></div>
   </body>
 </html>
