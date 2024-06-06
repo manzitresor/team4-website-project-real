@@ -1,28 +1,29 @@
-<nav class="px-4 fixed w-full z-[999] ">
-    <div class="container flex justify-between items-center">
-        <p class="font-semibold"><a href="google.com">DE</a><br><a href="instagram.com">EN</a></p>
-        <img src="img/Baumeister.png" alt="" class="sticky">
-        <div class="lg:hidden">
-            <button class="togglBtn" class="h-32 w-20" >
-                <img src="img/crosssection.png" alt="Close" class="h-full hidden">
-                <img src="img/Group 5.png" alt="Menu" class="h-full">
-            </button>
-            
+<nav class="fixed px-4 py-4  w-screen z-[999]">
+    <div class="flex justify-between items-center">
+        <div class="flex flex-col px-4">
+        <button class="font-semibold">DE</button>
+        <button class="font-semibold">EN</button>
         </div>
-        <ul id="menu" class="hidden lg:block text-right">
-            <li class="font-semibold"><a href="#">About</a></li>
-            <li class="font-semibold"><a href="#">Services</a></li>
-            <li class="font-semibold"><a href="#">References</a></li>
+        <h1 class="text-3xl font-semibold">Baumeister</h1>
+        <div class="lg:hidden">
+            <div class="togglBtn ring-2 ring-red-700 w-10 h-10 items-center -mt-5" >
+                <img src="img/crosssection.png" alt="Close" class="h-full  w-full hidden">
+                <img src="img/Group 5.png" alt="Hamburger" class="h-full w-full">
+            </div>   
+        </div>
+        <ul id="menu" class="hidden lg:block text-right px-0">
+            <li class="font-semibold"><a href="./about.html">About</a></li>
+            <li class="font-semibold"><a href="./services.html">Services</a></li>
+            <li class="font-semibold"><a href="./references.html">References</a></li>
             <li class="font-semibold"><a href="#">Contact</a></li>
         </ul>
     </div>
 
-    <div id="sidebar" class=" fixed top-[2.1rem] w-full h-full z-[100]  hidden lg:hidden space-y-8 px-8">
-        <div class="container flex justify-between items-center">
+    <div id="sidebar" class=" fixed top-[2.1rem] w-full h-full z-[100] hidden space-y-8 px-8">
+        <div class="container flex  justify-between items-center">
             <p class="font-bold"></p>
-            
         </div>
-        <ul class="text-center py-8 font-bold text-2xl space-y-9 text-green-700 " id="myList" >
+        <ul class="text-center py-8 font-bold text-2xl space-y-9 lg:hidden text-green-700 " id="myList" >
         </ul>
     </div>
 </nav>

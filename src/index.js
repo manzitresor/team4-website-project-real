@@ -52,11 +52,11 @@ function navBar() {
                 let isHidden = sidebar.classList.contains('hidden');
                         if (isHidden) {
                             sidebar.classList.remove('hidden');
-                            el.firstElementChild.style.display='block'
-                            el.lastElementChild.style.display='none'
+                            el.firstElementChild.classList.remove('hidden')
+                            el.lastElementChild.classList.add('hidden')
                         } else {
-                          el.firstElementChild.style.display='none'
-                          el.lastElementChild.style.display='block'
+                          el.firstElementChild.classList.add('hidden')
+                          el.lastElementChild.classList.remove('hidden')
                             sidebar.classList.add('hidden');
                         }
                     } )
