@@ -38,13 +38,15 @@ const contactInfo = [
 ];
 
 function navBar() {
-        let languages = ["About", "Services", "References", "Contacts"];
-        let listElement = document.getElementById("myList");
-        console.log(listElement);
-        languages.forEach(function (language) {
+        let pages = ["About", "Services", "References", "Contacts"];
+        let listContainer = document.getElementById("myList");
+        pages.forEach(page => {
         let listItem = document.createElement("li");
-        listItem.textContent = language;
-        listElement.appendChild(listItem);
+        let anchor = document.createElement('a')
+        anchor.href = `#${page[0].toLowerCase()}${page.slice(1,page.length)}`
+        anchor.textContent = page
+        listItem.appendChild(anchor);
+        listContainer.appendChild(listItem);
         });
         const sidebar = document.getElementById('sidebar');
         document.querySelectorAll(".togglBtn").forEach(el =>{
