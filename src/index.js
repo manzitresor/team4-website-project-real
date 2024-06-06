@@ -46,7 +46,7 @@ function navBar() {
                 anchor.href = `#${page[0].toLowerCase()}${page.slice(1, page.length)}`
                 anchor.textContent = page
                 listItem.appendChild(anchor);
-                listItem.style.zIndex = 999
+                listContainer.style.zIndex = 9
                 listContainer.appendChild(listItem);
         });
         listContainer.innerHTML += `<svg
@@ -56,7 +56,7 @@ function navBar() {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         class="w-full"
-        style="margin-top:-320px; z-index:400 ; display:absolute;"
+        style="margin-top:-250px; z-index:-40"
       >
         <path
           d="M599 91.5737L699.588 24L746.011 27.5449L835 304.957L726.67 401L599 91.5737Z"
@@ -194,7 +194,6 @@ function contactRender() {
                 el.getAttribute('fill') == 'black' ? el.setAttribute('fill','green') : el
         }
         )
-        
 
         if (!container) {
                 console.error("Container element not found");
