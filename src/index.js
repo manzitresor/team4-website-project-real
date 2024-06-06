@@ -38,15 +38,16 @@ const contactInfo = [
 ];
 
 function navBar() {
-       let pages = ["About", "Services", "References", "Contacts"];
+        let pages = ["About", "Services", "References", "Contacts"];
         let listContainer = document.getElementById("myList");
         pages.forEach(page => {
-        let listItem = document.createElement("li");
-        let anchor = document.createElement('a')
-        anchor.href = `#${page[0].toLowerCase()}${page.slice(1,page.length)}`
-        anchor.textContent = page
-        listItem.appendChild(anchor);
-        listContainer.appendChild(listItem);
+                let listItem = document.createElement("li");
+                let anchor = document.createElement('a')
+                anchor.href = `#${page[0].toLowerCase()}${page.slice(1, page.length)}`
+                anchor.textContent = page
+                listItem.appendChild(anchor);
+                listItem.style.zIndex = 999
+                listContainer.appendChild(listItem);
         });
         listContainer.innerHTML += `<svg
         width="1512"
@@ -54,8 +55,8 @@ function navBar() {
         viewBox="0 0 1512 1028"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        class="w-full "
-        style="margin-top:-100px"
+        class="w-full"
+        style="margin-top:-320px; z-index:400 ; display:absolute;"
       >
         <!-- pink polygon -->
         <path
@@ -95,23 +96,26 @@ function navBar() {
         const dropdownMenu = document.getElementById('sidebar');
         const linksDropdown = document.querySelectorAll('#myList>li')
         let togglBtn = document.querySelector(".togglBtn")
-        togglBtn.addEventListener('click',(e) => {
-                if(e.target.tagName == 'line' || e.target.tagName == 'path'  || e.target.tagName == 'svg' ){
+        togglBtn.addEventListener('click', (e) => {
+                if (e.target.tagName == 'line' || e.target.tagName == 'path' || e.target.tagName == 'svg') {
                         let isHidden = dropdownMenu.classList.contains('hidden');
                         if (isHidden) {
-                            dropdownMenu.classList.remove('hidden');
-                            togglBtn.firstElementChild.classList.remove('hidden')
-                            togglBtn.lastElementChild.classList.add('hidden')
+                                dropdownMenu.classList.remove('hidden');
+                                togglBtn.firstElementChild.classList.remove('hidden')
+                                togglBtn.lastElementChild.classList.add('hidden')
                         } else {
-                          dropdownMenu.classList.add('hidden');
-                          togglBtn.firstElementChild.classList.add('hidden')
-                          togglBtn.lastElementChild.classList.remove('hidden')
-                        } 
-                    }
-                    } )
-        linksDropdown.forEach(el=>{
-                el.addEventListener('click', (e)=>{
+                                dropdownMenu.classList.add('hidden');
+                                togglBtn.firstElementChild.classList.add('hidden')
+                                togglBtn.lastElementChild.classList.remove('hidden')
+                        }
+                }
+        })
+        linksDropdown.forEach(el => {
+                el.addEventListener('click', (e) => {
                         dropdownMenu.classList.add('hidden')
+                        togglBtn.lastElementChild.classList.remove('hidden')
+                        togglBtn.firstElementChild.classList.add('hidden')
+
                 })
         })
 }
@@ -239,7 +243,7 @@ function footerRender() {
                 lnk.className = "lg:w-[27%]";
                 if (link === 'Datenschutz') {
                         lnk.className = "md:order-3 lg:w-[27%]";
-                        
+
                 }
                 if (link === 'Impressum') {
                         lnk.className = "md:order-2 lg:w-[27%]";
