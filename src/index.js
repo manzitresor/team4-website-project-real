@@ -58,9 +58,8 @@ function navBar() {
                             togglBtn.firstElementChild.classList.remove('hidden')
                             togglBtn.lastElementChild.classList.add('hidden')
                         } else {
-                        console.log('OKKKK')
-
-                            dropdownMenu.classList.add('hidden');
+                        console.log('clicked')
+                                dropdownMenu.classList.add('hidden');
                           togglBtn.firstElementChild.classList.add('hidden')
                           togglBtn.lastElementChild.classList.remove('hidden')
                         } 
