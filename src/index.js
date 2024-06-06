@@ -189,11 +189,12 @@ function referencesRendering() {
 
 function contactRender() {
         const container = document.querySelector(".contacts");
-        document.querySelectorAll(".togglBtn>svg>path").forEach(el =>{
-                el.setAttribute('fill','green')
+        let hamburger = document.querySelectorAll(".togglBtn>svg>path")
+        hamburger.forEach(el =>{
+                el.getAttribute('fill') == 'black' ? el.setAttribute('fill','green') : el
         }
         )
-
+        
 
         if (!container) {
                 console.error("Container element not found");
