@@ -38,33 +38,33 @@ const contactInfo = [
 ];
 
 function navBar() {
-        let languages = ["About", "Services", "References", "Contacts"];
-        let listElement = document.getElementById("myList");
-        console.log(listElement);
-        languages.forEach(function (language) {
-                let listItem = document.createElement("li");
-                listItem.textContent = language;
-                listElement.appendChild(listItem);
+       let pages = ["About", "Services", "References", "Contacts"];
+        let listContainer = document.getElementById("myList");
+        pages.forEach(page => {
+        let listItem = document.createElement("li");
+        let anchor = document.createElement('a')
+        anchor.href = `#${page[0].toLowerCase()}${page.slice(1,page.length)}`
+        anchor.textContent = page
+        listItem.appendChild(anchor);
+        listContainer.appendChild(listItem);
         });
-        const sidebar = document.getElementById('sidebar');
-
-        document.querySelectorAll(".togglBtn").forEach(el => {
-                el.addEventListener('click', function () {
-                        let isHidden = sidebar.classList.contains('hidden');
-
+        const dropdownMenu = document.getElementById('sidebar');
+        let togglBtn = document.querySelector(".togglBtn")
+        togglBtn.addEventListener('click',(e) => {
+                if(e.target.tagName == 'line' || e.target.tagName == 'path'  || e.target.tagName == 'svg'  ){
+                        let isHidden = dropdownMenu.classList.contains('hidden');
                         if (isHidden) {
-                                sidebar.classList.remove('hidden');
+                            dropdownMenu.classList.remove('hidden');
+                            togglBtn.firstElementChild.classList.remove('hidden')
+                            togglBtn.lastElementChild.classList.add('hidden')
                         } else {
-
-                                sidebar.classList.add('hidden');
-                        }
-                })
-        })
-
-
-
-
-
+                        console.log('clicked')
+                                dropdownMenu.classList.add('hidden');
+                          togglBtn.firstElementChild.classList.add('hidden')
+                          togglBtn.lastElementChild.classList.remove('hidden')
+                        } 
+                    }
+                    } )
 }
 
 
