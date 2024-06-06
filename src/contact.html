@@ -18,17 +18,19 @@
 
     window.onload = () => {
       let loadedComponents = 0;
-      const totalComponents = 3;
+      const totalComponents = 4;
 
       const componentLoaded = () => {
         loadedComponents++;
         if (loadedComponents === totalComponents) {
           contactRender();
+          footerRender();
         }
       };
 
       loadComponents("header", "sections/header.html", componentLoaded);
       loadComponents("contact", "sections/contact.html", componentLoaded);
+      loadComponents("red-sticky", "sections/sticky-red.html", componentLoaded);
       loadComponents("footer", "sections/footer.html", componentLoaded);
     };
   </script>
@@ -36,6 +38,7 @@
   <body>
     <div id="header"></div>
     <div id="contact"></div>
+    <div id="red-sticky"></div>
     <div id="footer"></div>
   </body>
 </html>
