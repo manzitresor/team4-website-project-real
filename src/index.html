@@ -17,7 +17,7 @@
 
       window.onload = () => {
         let loadedComponents = 0;
-        const totalComponents = 8;
+        const totalComponents = 7;
 
         const componentLoaded = () => {
           loadedComponents++;
@@ -31,11 +31,6 @@
         loadComponents("header", "sections/header.html", componentLoaded);
         loadComponents("hero", "sections/hero.html", componentLoaded);
         loadComponents("about", "sections/about.html", componentLoaded);
-        loadComponents(
-          "sticky",
-          "sections/sticky-yellow.html",
-          componentLoaded
-        );
         loadComponents("services", "sections/services.html", componentLoaded);
         loadComponents(
           "references",
@@ -57,7 +52,6 @@
     <div id="header"></div>
     <div id="hero"></div>
     <div id="about"></div>
-    <div id="sticky"></div>
     <div id="services"></div>
     <div id="references"></div>
     <div id="red-sticky"></div>
