@@ -48,21 +48,24 @@ function navBar() {
         listItem.appendChild(anchor);
         listContainer.appendChild(listItem);
         });
-        const sidebar = document.getElementById('sidebar');
-        document.querySelectorAll(".togglBtn").forEach(el =>{
-                el.addEventListener('click',function() {
-                let isHidden = sidebar.classList.contains('hidden');
+        const dropdownMenu = document.getElementById('sidebar');
+        let togglBtn = document.querySelector(".togglBtn")
+        togglBtn.addEventListener('click',(e) => {
+                if(e.target.tagName == 'line' || e.target.tagName == 'path'  || e.target.tagName == 'svg'  ){
+                        let isHidden = dropdownMenu.classList.contains('hidden');
                         if (isHidden) {
-                            sidebar.classList.remove('hidden');
-                            el.firstElementChild.classList.remove('hidden')
-                            el.lastElementChild.classList.add('hidden')
+                            dropdownMenu.classList.remove('hidden');
+                            togglBtn.firstElementChild.classList.remove('hidden')
+                            togglBtn.lastElementChild.classList.add('hidden')
                         } else {
-                          el.firstElementChild.classList.add('hidden')
-                          el.lastElementChild.classList.remove('hidden')
-                            sidebar.classList.add('hidden');
-                        }
+                        console.log('OKKKK')
+
+                            dropdownMenu.classList.add('hidden');
+                          togglBtn.firstElementChild.classList.add('hidden')
+                          togglBtn.lastElementChild.classList.remove('hidden')
+                        } 
+                }
                     } )
-        })
 
 }
 
