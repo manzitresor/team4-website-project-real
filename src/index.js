@@ -38,41 +38,82 @@ const contactInfo = [
 ];
 
 function navBar() {
-        let languages = ["About", "Services", "References", "Contacts"];
-        let listElement = document.getElementById("myList");
-        console.log(listElement);
-        languages.forEach(function (language) {
+        let pages = ["About", "Services", "References", "Contacts"];
+        let listContainer = document.getElementById("myList");
+        pages.forEach(page => {
                 let listItem = document.createElement("li");
-                listItem.textContent = language;
-                listElement.appendChild(listItem);
+                let anchor = document.createElement('a')
+                anchor.href = `/index.html#${page[0].toLowerCase()}${page.slice(1, page.length)}`
+                anchor.textContent = page
+                listItem.appendChild(anchor);
+                listContainer.style.zIndex = 9
+                listContainer.appendChild(listItem);
         });
-        const sidebar = document.getElementById('sidebar');
-
-        document.querySelectorAll(".togglBtn").forEach(el => {
-                el.addEventListener('click', function () {
-                        let isHidden = sidebar.classList.contains('hidden');
-
+        listContainer.lastElementChild.firstElementChild.href = `/contact.html`
+        listContainer.innerHTML += `<svg
+        width="1512"
+        height="1028"
+        viewBox="0 0 1512 1028"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-full"
+        style="margin-top:-250px; z-index:-40"
+      >
+        <path
+          d="M599 91.5737L699.588 24L746.011 27.5449L835 304.957L726.67 401L599 91.5737Z"
+          fill="#FF93C8"
+        />
+        <g class="sticky top-0">
+          <path
+            d="M1396 251.5L1183.5 343L1107 560.5L1165 846.5L1513 1028V388L1396 251.5Z"
+            fill="#00672E"
+          />
+        </g>
+        <path
+          d="M23.3829 567.262L290.124 21.2721L648.796 0.66748L725 294.267L464.425 664.013L228.601 874.154L-1 873.862L-0.943427 694.595L23.3829 567.262Z"
+          fill="#FFE800"
+        />
+        <path
+          d="M218 548.5L197.5 730L357.5 898L780.5 928L919 728.5L715.5 510L218 548.5Z"
+          fill="#E31C24"
+        />
+        <g >
+          <path 
+            d="M493.836 688L311 373.382L395.721 148L634.325 208.26L835 496.098L730.189 679.074L493.836 688Z"
+            fill="#00672E"
+          />
+        </g>
+        <path
+          d="M621 468.548L921.437 729H1140.9L1325 368.918L1258.67 70L1000.64 77.3853L893.754 103.219L621 468.548Z"
+          fill="#0F2CCE"
+        />
+        </svg>`
+        const dropdownMenu = document.getElementById('sidebar');
+        const linksDropdown = document.querySelectorAll('#myList>li')
+        let togglBtn = document.querySelector(".togglBtn")
+        togglBtn.addEventListener('click', (e) => {
+                if (e.target.tagName == 'line' || e.target.tagName == 'path' || e.target.tagName == 'svg') {
+                        let isHidden = dropdownMenu.classList.contains('hidden');
                         if (isHidden) {
-                                sidebar.classList.remove('hidden');
+                                dropdownMenu.classList.remove('hidden');
+                                togglBtn.firstElementChild.classList.remove('hidden')
+                                togglBtn.lastElementChild.classList.add('hidden')
                         } else {
-
-                                sidebar.classList.add('hidden');
+                                dropdownMenu.classList.add('hidden');
+                                togglBtn.firstElementChild.classList.add('hidden')
+                                togglBtn.lastElementChild.classList.remove('hidden')
                         }
+                }
+        })
+        linksDropdown.forEach(el => {
+                el.addEventListener('click', (e) => {
+                        dropdownMenu.classList.add('hidden')
+                        togglBtn.lastElementChild.classList.remove('hidden')
+                        togglBtn.firstElementChild.classList.add('hidden')
+
                 })
         })
-
-
-
-
-
 }
-
-
-
-
-
-
-
 
 function service() {
         const data = [
