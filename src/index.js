@@ -223,21 +223,43 @@ function contactRender() {
 }
 
 function footerRender() {
-        const links = ['Impressum', 'Datenschutz', 'LinkedIn', 'Instagram'];
+        const linksFooter = [
+                {
+                        type: "a",
+                        content: "Impressum",
+                        href: "../contact.html",
+                },
+                {
+                        type: "a",
+                        content: "Datenschutz",
+                        href: "../privacy.html",
+                },
+                {
+                        type: "a",
+                        content: "LinkedIn",
+                        href: "https://www.linkedin.com/feed/",
+                },
+                {
+                        type: "a",
+                        content: "Instagram",
+                        href: "https://www.instagram.com/",
+                },
+        ]
         const links_list = document.querySelector('#footer nav ul');
         const br = document.createElement('br');
         const fragment = new DocumentFragment();
-        links.forEach((link) => {
+        linksFooter.forEach((link) => {
                 const lnk = document.createElement('li');
                 const a = document.createElement('a');
-                a.innerText = link;
+                a.innerText = link.content;
+                a.href = link.href;
                 lnk.append(a);
                 lnk.className = "lg:w-[27%]";
-                if (link === 'Datenschutz') {
+                if (link.content === 'Datenschutz') {
                         lnk.className = "md:order-3 lg:w-[27%]";
-                        
+
                 }
-                if (link === 'Impressum') {
+                if (link.content === 'Impressum') {
                         lnk.className = "md:order-2 lg:w-[27%]";
                 }
                 fragment.append(lnk);
