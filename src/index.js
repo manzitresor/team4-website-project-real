@@ -128,17 +128,21 @@ const referencesData = [
         "yamo"
 ]
 
-function referencesRendering() {
+function referencesRendering(){
         let refs = document.querySelector('#reference');
         console.log(refs)
         const fragmentRef = new DocumentFragment();
-        referencesData.forEach(text => {
-                let liEl = document.createElement('li');
-                liEl.innerText = text;
-                fragmentRef.appendChild(liEl);
-        });
-        refs.appendChild(fragmentRef);
-}
+         referencesData.forEach(text => {
+              let liEl = document.createElement('li');
+              let refLink = document.createElement('a');
+              refLink.href = `#`;
+        
+              refLink.textContent = text;
+              liEl.appendChild(refLink)
+              fragmentRef.appendChild(liEl);
+            });
+            refs.appendChild(fragmentRef);
+        }
 
 function contactRender() {
         const container = document.querySelector(".contacts");
