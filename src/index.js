@@ -38,7 +38,7 @@ const contactInfo = [
 ];
 
 function navBar() {
-        let pages = ["About", "Services", "References", "Contacts"];
+        let pages = ["About", "Services", "References", "Contact"];
         let listContainer = document.getElementById("myList");
         pages.forEach(page => {
                 let listItem = document.createElement("li");
@@ -46,48 +46,20 @@ function navBar() {
                 anchor.href = `/index.html#${page[0].toLowerCase()}${page.slice(1, page.length)}`
                 anchor.textContent = page
                 listItem.appendChild(anchor);
-                listContainer.style.zIndex = 9
+                listItem.style.zIndex = 999
+                listItem.style.position = 'relative'
                 listContainer.appendChild(listItem);
         });
         listContainer.lastElementChild.firstElementChild.href = `/contact.html`
-        listContainer.innerHTML += `<svg
-        width="1512"
-        height="1028"
-        viewBox="0 0 1512 1028"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        class="w-full"
-        style="margin-top:-250px; z-index:-40"
-      >
-        <path
-          d="M599 91.5737L699.588 24L746.011 27.5449L835 304.957L726.67 401L599 91.5737Z"
-          fill="#FF93C8"
-        />
-        <g class="sticky top-0">
-          <path
-            d="M1396 251.5L1183.5 343L1107 560.5L1165 846.5L1513 1028V388L1396 251.5Z"
-            fill="#00672E"
-          />
-        </g>
-        <path
-          d="M23.3829 567.262L290.124 21.2721L648.796 0.66748L725 294.267L464.425 664.013L228.601 874.154L-1 873.862L-0.943427 694.595L23.3829 567.262Z"
-          fill="#FFE800"
-        />
-        <path
-          d="M218 548.5L197.5 730L357.5 898L780.5 928L919 728.5L715.5 510L218 548.5Z"
-          fill="#E31C24"
-        />
-        <g >
-          <path 
-            d="M493.836 688L311 373.382L395.721 148L634.325 208.26L835 496.098L730.189 679.074L493.836 688Z"
-            fill="#00672E"
-          />
-        </g>
-        <path
-          d="M621 468.548L921.437 729H1140.9L1325 368.918L1258.67 70L1000.64 77.3853L893.754 103.219L621 468.548Z"
-          fill="#0F2CCE"
-        />
-        </svg>`
+        listContainer.innerHTML += `<svg style='margin-top:-50px; z-index:-400; width: 100%;' id='dropdownSvg' width="393" height="419" viewBox="0 0 393 419" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M253 36.889L294.515 9L313.674 10.4631L350.402 124.957L305.692 164.595L253 36.889Z" fill="#FF93C8"/>
+<path d="M345.276 99L257.573 136.764L226 226.53L249.938 344.568L393.564 419.477V155.336L345.276 99Z" fill="#00672E"/>
+<path d="M10.0633 233.845L120.153 8.50394L268.184 0L299.635 121.174L192.09 273.776L94.7609 360.505L0 360.385L0.0233488 286.398L10.0633 233.845Z" fill="#FFE800"/>
+<path d="M113 223.194L226.944 322H310.18L380 185.398L354.844 72L256.983 74.8017L216.445 84.6022L113 223.194Z" fill="#0F2CCE"/>
+<path d="M90.3857 226.101L81.9249 301.01L147.96 370.347L322.541 382.728L379.702 300.391L295.714 210.211L90.3857 226.101Z" fill="#E31C24"/>
+<path d="M85.46 276.869L10 147.02L44.9661 54L143.443 78.8704L226.265 197.667L183.008 273.185L85.46 276.869Z" fill="#00672E"/>
+</svg>
+`
         const dropdownMenu = document.getElementById('sidebar');
         const linksDropdown = document.querySelectorAll('#myList>li')
         let togglBtn = document.querySelector(".togglBtn")
