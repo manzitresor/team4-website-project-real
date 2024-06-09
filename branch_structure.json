@@ -1,0 +1,33 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "dev",
+    "ft/navbar",
+    "ft/privacy",
+    "ft/services",
+    "fx/jsdata",
+    "hotfx/rm-about",
+    "main",
+    "origin"
+  ],
+  "parent": {
+    "dev": "main",
+    "ft/navbar": "main",
+    "ft/privacy": "main",
+    "ft/services": "main",
+    "fx/jsdata": "main",
+    "hotfx/rm-about": "main",
+    "main": null,
+    "origin": "main"
+  },
+  "order": [
+    "main",
+    "dev",
+    "ft/navbar",
+    "ft/privacy",
+    "ft/services",
+    "fx/jsdata",
+    "hotfx/rm-about",
+    "origin"
+  ]
+}
